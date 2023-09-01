@@ -7,11 +7,18 @@
         public $director;
         public $year;
 
-        public function __construct($title, $director, $year)
+        // BONUS 1:
+        public $genres;
+
+        public function __construct($title, $director, $year, $genres,)
         {
             $this->title = $title;
             $this->director = $director;
             $this->year = $year;
+
+            // BONUS 1:
+            $this->genres = $genres;
+            
         }
 
         
@@ -20,12 +27,15 @@
             echo "Titolo: {$this->title}\n";
             echo "Regista: {$this->director}\n";
             echo "Anno: {$this->year}\n";
+
+            // BONUS 1:
+            echo "Generi: " . implode(', ', $this->genres) . "\n";
         }
     }
 
 
-    $movie1 = new Movie("Memento", "Christopher Nolan", 2000);
-    $movie2 = new Movie("Amici Miei Atto Primo", "Pietro Germi", 1975);
+    $movie1 = new Movie("Memento", "Christopher Nolan", 2000, ["Thriller", "Thriller Psicologico", "Drama"] );
+    $movie2 = new Movie("Amici Miei Atto Primo", "Pietro Germi", 1975, ["Commedia", "Grottesco", "Commedia all'italiana"]);
 
 
     echo "Film 1:\n";
